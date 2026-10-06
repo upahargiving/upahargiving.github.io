@@ -1,0 +1,96 @@
+:root {
+  --paper: #faf7f1;
+  --ink: #23201b;
+  --muted: #6b645a;
+  --rule: #e3ddd1;
+  --accent: #a3362b; /* the red of the school uniforms */
+  color-scheme: light;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font: 400 1.125rem/1.6 "Newsreader", Georgia, serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+.wrap { max-width: 40rem; margin: 0 auto; padding: 0 1.25rem; }
+
+a { color: var(--accent); text-underline-offset: 0.15em; }
+
+.top {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+}
+.top .name { color: var(--ink); text-decoration: none; font-weight: 500; }
+
+h1 {
+  font-size: clamp(1.75rem, 5vw, 2.4rem);
+  line-height: 1.15;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  margin: 2.5rem 0 1.25rem;
+  text-wrap: balance;
+}
+
+h2 {
+  font-size: 0.85rem;
+  font-family: system-ui, sans-serif;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin: 0 0 0.75rem;
+}
+
+section { margin: 3.5rem 0; }
+p { margin: 0 0 1rem; }
+
+.button {
+  display: inline-block;
+  background: var(--accent);
+  color: #fff;
+  text-decoration: none;
+  font: 600 1rem/1 system-ui, sans-serif;
+  padding: 0.85rem 1.4rem;
+  border-radius: 4px;
+  margin-top: 0.5rem;
+}
+.button:hover { background: #8a2c23; }
+.button:focus-visible, a:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+
+img { display: block; width: 100%; height: auto; border-radius: 2px; }
+
+/* photos run a little wider than the text */
+.wide, .pair { max-width: 52rem; margin: 3rem auto; padding: 0 1.25rem; }
+.pair { display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; }
+.pair img { aspect-ratio: 4 / 3; object-fit: cover; }
+@media (max-width: 34rem) { .pair { grid-template-columns: 1fr; } }
+
+.facts { margin: 0 0 1.5rem; border-top: 1px solid var(--rule); }
+.facts div {
+  display: grid;
+  grid-template-columns: 7.5rem 1fr;
+  gap: 1rem;
+  padding: 0.75rem 0;
+  border-bottom: 1px solid var(--rule);
+}
+.facts dt { font-weight: 500; font-variant-numeric: tabular-nums; }
+.facts dd { margin: 0; color: var(--muted); }
+
+address { font-style: normal; }
+
+footer {
+  margin-top: 4rem;
+  padding-top: 1.5rem;
+  padding-bottom: 3rem;
+  border-top: 1px solid var(--rule);
+  color: var(--muted);
+  font-size: 0.9rem;
+}
